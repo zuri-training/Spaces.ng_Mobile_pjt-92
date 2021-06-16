@@ -1,4 +1,6 @@
- import 'package:flutter/material.dart';
+
+
+import 'package:flutter/material.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -13,18 +15,31 @@ class _LandingPageState extends State<LandingPage> {
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.deepPurple,
+          color: Colors.deepPurpleAccent,
         ),
         child: Column(
           children: <Widget>[
-            SizedBox(
-              height: 300,
-              child: Container(
-                color: Colors.white,
-                child: Text(""),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 250, 20, 100),
+              child: SizedBox(
+                height: 300,
+                width: 400,
+                child: Container(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      "About Space.ng,\nblabla blabla bla bla bla bla bla",
+                      style: TextStyle(
+                        color: Colors.purple,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
-
           ],
         ),
       ),
