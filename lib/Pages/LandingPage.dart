@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
+import 'package:space_ng/widgets_s/background_image_widget.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -9,38 +9,36 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('images/image1.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [
-              Colors.purpleAccent[100].withOpacity(0.2),
-            ],
-              stops: [0.0, 1],
-              begin: Alignment.topCenter,
-            ),
-          ),
-          child: Align(
-            alignment: Alignment.center,
-            child: Container(
-              width: 300.0,
-              margin: EdgeInsets.only(top: 200.0),
-              padding: EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                
+    return BackgroundImageWidget(
+      image: AssetImage("assets/wallpaper.jpg"),
+      child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(120.0),
+                child: SizedBox(
+                  height: 300,
+                  child: Container(
+                    color: Colors.transparent,
+                    child: FlutterLogo(size: 160,),
+                  ),
+                ),
               ),
-            ),
+              Container(
+                child: FlatButton(
+                  onPressed: () {
+                    print('you clicked me');
+                  },
+                  child: Text('Get Started'),
+                  color: Colors.white,
+                ),
+              ),
+            ],
           ),
         ),
-      ),
     );
   }
 }
