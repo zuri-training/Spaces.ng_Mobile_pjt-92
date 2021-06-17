@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 
 class LandingPage extends StatefulWidget {
   @override
@@ -15,32 +14,31 @@ class _LandingPageState extends State<LandingPage> {
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Colors.deepPurpleAccent,
+          image: DecorationImage(
+            image: AssetImage('images/image1.jpg'),
+            fit: BoxFit.cover,
+          ),
         ),
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(20, 250, 20, 100),
-              child: SizedBox(
-                height: 300,
-                width: 400,
-                child: Container(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text(
-                      "About Space.ng,\nblabla blabla bla bla bla bla bla",
-                      style: TextStyle(
-                        color: Colors.purple,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                      ),
-                    ),
-                  ),
-                ),
+        child: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Colors.purpleAccent[100].withOpacity(0.2),
+            ],
+              stops: [0.0, 1],
+              begin: Alignment.topCenter,
+            ),
+          ),
+          child: Align(
+            alignment: Alignment.center,
+            child: Container(
+              width: 300.0,
+              margin: EdgeInsets.only(top: 200.0),
+              padding: EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                
               ),
             ),
-          ],
+          ),
         ),
       ),
     );
