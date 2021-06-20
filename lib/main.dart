@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:space_ng/Pages/LandingPage.dart';
+import 'package:space_ng/Pages/Login_Page.dart';
+import 'package:space_ng/Pages/Registration_Page.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +17,12 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.indigo,
 
       ),
-      home: LandingPage(),
+      initialRoute: LandingPage.id,
+      routes: {
+        LandingPage.id: (context) => LandingPage(),
+        LoginScreen.id: (context) => LoginScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+      },
     );
   }
 }
